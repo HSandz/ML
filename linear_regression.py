@@ -13,7 +13,7 @@ def compute_model_output(x, w, b):
     #     f_wb[i] = w * x[i] + b
     # return f_wb
     
-    # Vectorized
+    # Vectorized:
     return w * x + b
     
 
@@ -29,7 +29,7 @@ def compute_cost(x, y, w, b):
     #
     # return total_cost
     
-    # Vectorized
+    # Vectorized:
     f_wb = compute_model_output(x, w, b)
     cost = (1 / (2 * m)) * np.sum((f_wb - y) ** 2)
     return cost
@@ -52,7 +52,7 @@ def compute_gradient(x, y, w, b):
     #
     # return dj_dw, dj_db
     
-    # Vectorized
+    # Vectorized:
     f_wb = compute_model_output(x, w, b)
     dj_dw = (1 / m) * np.dot(f_wb - y, x)
     dj_db = (1 / m) * np.sum(f_wb - y)
@@ -84,8 +84,6 @@ def gradient_descent(x, y, w_in, b_in, alpha, num_iters, cost_function, gradient
 
 x_train = np.array([1.0, 2.0])
 y_train = np.array([300.0, 500.0])
-
-# or: m = len(x_train)
 
 # Plot gradients
 # plt_gradients(x_train,y_train, compute_cost, compute_gradient)
