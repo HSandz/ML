@@ -1,40 +1,61 @@
-import math, copy
+import math
 import numpy as np
 import matplotlib.pyplot as plt
 from data.lab_utils_uni import plt_house_x, plt_contour_wgrad, plt_divergence, plt_gradients
 plt.style.use('./data/deeplearning.mplstyle')
 
 def compute_model_output(x, w, b):
-    m = x.shape[0]
-    f_wb = np.zeros(m)
-    for i in range(m):
-        f_wb[i] = w * x[i] + b
-    return f_wb
+    
+    # Normal loop
+    # m = x.shape[0]
+    # f_wb = np.zeros(m)
+    # for i in range(m):
+    #     f_wb[i] = w * x[i] + b
+    # return f_wb
+    
+    # Vectorized
+    return w * x + b
+    
 
 def compute_cost(x, y, w, b):
     m = x.shape[0]
-    cost = 0
     
-    for i in range(m):
-        f_wb = w * x[i] + b
-        cost = cost + (f_wb - y[i])**2
-    total_cost = 1 / (2 * m) * cost
+    # Normal loop
+    # cost = 0
+    # for i in range(m):
+    #     f_wb = w * x[i] + b
+    #     cost = cost + (f_wb - y[i])**2
+    # total_cost = 1 / (2 * m) * cost
+    #
+    # return total_cost
     
-    return total_cost
+    # Vectorized
+    f_wb = compute_model_output(x, w, b)
+    cost = (1 / (2 * m)) * np.sum((f_wb - y) ** 2)
+    return cost
 
 def compute_gradient(x, y, w, b):
     m = x.shape[0]
-    dj_dw = 0
-    dj_db = 0
     
-    for i in range(m):
-        f_wb = w * x[i] + b
-        dj_dw_i = (f_wb - y[i]) * x[i]
-        dj_db_i = f_wb - y[i]
-        dj_db += dj_db_i
-        dj_dw += dj_dw_i
-    dj_dw /= m
-    dj_db /= m
+    # Normal loop
+    # dj_dw = 0
+    # dj_db = 0
+    #
+    # for i in range(m):
+    #     f_wb = w * x[i] + b
+    #     dj_dw_i = (f_wb - y[i]) * x[i]
+    #     dj_db_i = f_wb - y[i]
+    #     dj_db += dj_db_i
+    #     dj_dw += dj_dw_i
+    # dj_dw /= m
+    # dj_db /= m
+    #
+    # return dj_dw, dj_db
+    
+    # Vectorized
+    f_wb = compute_model_output(x, w, b)
+    dj_dw = (1 / m) * np.dot(f_wb - y, x)
+    dj_db = (1 / m) * np.sum(f_wb - y)
     
     return dj_dw, dj_db
 
