@@ -6,7 +6,7 @@ from matplotlib import cm
 from matplotlib.patches import FancyArrowPatch
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 import matplotlib.colors as colors
-from data2.lab_utils_common import dlc
+from lab_utils_common import dlc
 from matplotlib import cm
 
 

@@ -2,10 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('./data2/deeplearning.mplstyle')
 import tensorflow as tf
-from tensorflow.python.keras.activations import sigmoid
+from keras.api.activations import sigmoid
 from matplotlib import cm
 import matplotlib.colors as colors
-from data2.lab_utils_common import dlc
+from lab_utils_common import dlc
 
 def load_coffee_data():
     """ Creates a coffee roasting data set.

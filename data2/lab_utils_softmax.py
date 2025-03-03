@@ -4,7 +4,7 @@ plt.style.use('./data2/deeplearning.mplstyle')
 import tensorflow as tf
 from IPython.display import display, Markdown, Latex
 from matplotlib.widgets import Slider
-from data2.lab_utils_common import dlc
+from lab_utils_common import dlc
 
 
 def plt_softmax(my_softmax):
