@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-plt.style.use('./deeplearning.mplstyle')
+plt.style.use('./data2/deeplearning.mplstyle')
 from matplotlib import cm
 import matplotlib.colors as colors
-from lab_utils_common import dlc
+from data2.lab_utils_common import dlc
 
 def plt_prob_1d(ax,fwb):
     """ plots a decision boundary but include shading to indicate the probability """
