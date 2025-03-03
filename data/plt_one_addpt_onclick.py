@@ -3,7 +3,7 @@ import copy
 from ipywidgets import Output
 from matplotlib.widgets import Button, CheckButtons
 from matplotlib.patches import FancyArrowPatch
-from data.lab_utils_common import np, plt, dlblue, dlorange, sigmoid, dldarkred, gradient_descent
+from data.lab_utils_common2 import np, plt, dlblue, dlorange, sigmoid, dldarkred, gradient_descent
 
 # for debug
 #output = Output() # sends hidden error messages to display when using widgets
