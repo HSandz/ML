@@ -1,9 +1,9 @@
 import copy, math
 import numpy as np
 import matplotlib.pyplot as plt
-from data.plt_overfit import overfit_example, output
-from data.lab_utils_common2 import dlc, plot_data, plt_tumor_data, sigmoid, compute_cost_logistic
-from data.plt_quad_logistic import plt_quad_logistic, plt_prob
+from data1.plt_overfit import overfit_example, output
+from data1.lab_utils_common2 import dlc, plot_data, plt_tumor_data, sigmoid, compute_cost_logistic
+from data1.plt_quad_logistic import plt_quad_logistic, plt_prob
 plt.style.use('./data/deeplearning.mplstyle')
 np.set_printoptions(precision = 8)
 

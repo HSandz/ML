@@ -1,7 +1,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-from data.lab_utils_uni import plt_house_x, plt_contour_wgrad, plt_divergence, plt_gradients
+from data1.lab_utils_uni import plt_house_x, plt_contour_wgrad, plt_divergence, plt_gradients
 plt.style.use('./data/deeplearning.mplstyle')
 
 def compute_model_output(x, w, b):
