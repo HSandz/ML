@@ -112,7 +112,7 @@ def plt_network(X,Y,netf):
     ax[1].axhline(y= 12, color=dlc["dlpurple"], linewidth=1)
     ax[1].axvline(x=175, color=dlc["dlpurple"], linewidth=1)
     fwb = netf(X)
-    yhat = (fwb > 0.5).astype(int)
+    yhat = (fwb.numpy() > 0.5).astype(int)
     ax[1].scatter(X[yhat[:,0]==1,0],X[yhat[:,0]==1,1], s=70, marker='x', c='orange', label="Predicted Good Roast" )
     ax[1].scatter(X[yhat[:,0]==0,0],X[yhat[:,0]==0,1], s=100, marker='o', facecolors='none', 
                    edgecolors=dlc["dldarkblue"],linewidth=1,  label="Predicted Bad Roast")
